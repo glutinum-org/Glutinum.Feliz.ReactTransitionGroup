@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Glutinum.Feliz.ReactTransitionGroup", "Package\Glutinum.Feliz.ReactTransitionGroup.fsproj", "{C2CE7D6F-6668-499D-892E-A5F9B7EDF306}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Demo", "Demo\Demo.fsproj", "{F055E158-3B08-416E-A1FC-5DF964F13097}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2CE7D6F-6668-499D-892E-A5F9B7EDF306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CE7D6F-6668-499D-892E-A5F9B7EDF306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CE7D6F-6668-499D-892E-A5F9B7EDF306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2CE7D6F-6668-499D-892E-A5F9B7EDF306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F055E158-3B08-416E-A1FC-5DF964F13097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F055E158-3B08-416E-A1FC-5DF964F13097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F055E158-3B08-416E-A1FC-5DF964F13097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F055E158-3B08-416E-A1FC-5DF964F13097}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

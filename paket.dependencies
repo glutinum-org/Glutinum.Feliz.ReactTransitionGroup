@@ -1,0 +1,12 @@
+source https://api.nuget.org/v3/index.json
+
+storage: none
+framework: netstandard2.0
+
+nuget FSharp.Core >= 5.0.2
+nuget Fable.Core
+nuget Feliz ~> 1
+nuget Feliz.CompilerPlugins ~> 1
+nuget Fable.React ~> 8
+nuget Ionide.KeepAChangelog.Tasks copy_local: true
+nuget Microsoft.SourceLink.GitHub copy_local: true

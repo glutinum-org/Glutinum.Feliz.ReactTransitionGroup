@@ -1,0 +1,10 @@
+node_modules
+
+.ionide/
+
+bin/
+obj/
+*.fs.js
+*.fs.js.map
+.idea/
+.paket/

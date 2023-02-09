@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "fable": {
+      "version": "3.7.20",
+      "commands": [
+        "fable"
+      ]
+    },
+    "paket": {
+      "version": "7.2.0",
+      "commands": [
+        "paket"
+      ]
+    },
+    "releaseit": {
+      "version": "0.1.0",
+      "commands": [
+        "release"
+      ]
+    }
+  }
+}
