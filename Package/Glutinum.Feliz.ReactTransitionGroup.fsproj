@@ -26,9 +26,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Types.fs" />
-    <Compile Include="Interop.fs" />
     <Compile Include="Types\Config.fs" />
     <Compile Include="Types\Transition.fs" />
+    <Compile Include="Types\CSSTransition.fs" />
     <Compile Include="Exports.fs" />
   </ItemGroup>
   <ItemGroup>

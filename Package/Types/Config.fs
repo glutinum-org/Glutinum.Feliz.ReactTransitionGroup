@@ -1,4 +1,5 @@
 namespace Glutinum.Feliz.ReactTransitionGroup.Types
 
-type [<AllowNullLiteral>] Config =
+[<AllowNullLiteral>]
+type Config =
     abstract disabled: bool with get, set

@@ -4,6 +4,7 @@ open Feliz
 open Fable.Core.JsInterop
 open Browser
 open Glutinum.Feliz.ReactTransitionGroup
+open Feliz.Bulma
 
 open type Glutinum.Feliz.ReactTransitionGroup.Exports
 
@@ -17,7 +18,7 @@ let duration = 300
 // let FadeContent (state )
 
 [<ReactComponent>]
-let App () =
+let Fade () =
     let inProp, setInProp = React.useState false
     let nodeRef = React.useRef<Browser.Types.HTMLElement option>(None)
 
@@ -49,4 +50,69 @@ let App () =
             prop.onClick (fun _ -> setInProp (not inProp))
         ]
 
+    ]
+
+[<ReactComponent>]
+let CSSTransitionDemo () =
+    let showMessage, setShowMessage = React.useState false
+    let showButton, setShowButton = React.useState true
+    let nodeRef = React.useRef<Browser.Types.HTMLElement option>(None)
+
+    Html.div [
+        if showButton then
+            Bulma.button.a [
+                color.isPrimary
+                prop.text "Show Message"
+                prop.onClick (fun _ ->
+                    setShowMessage true
+                )
+            ]
+
+        CSSTransition [
+            transition.nodeRef nodeRef
+            transition.``in`` showMessage
+            transition.appear true
+            transition.timeout 300
+            transition.unmountOnExit
+            cssTransition.classNames "alert"
+            transition.onEnter (fun () ->
+                setShowButton false
+            )
+            transition.onExited (fun () ->
+                setShowButton true
+            )
+
+            transition.child (
+                Bulma.message [
+                    prop.ref nodeRef
+                    prop.children [
+                        Bulma.messageHeader [
+                            Html.p "Message title"
+                            Bulma.delete [
+                                prop.onClick (fun _ ->
+                                    setShowMessage false
+                                )
+                            ]
+                        ]
+                        Bulma.messageBody [
+                            Html.p "Message body"
+                            Bulma.button.a [
+                                color.isPrimary
+                                prop.text "Close"
+                                prop.onClick (fun _ ->
+                                    setShowMessage false
+                                )
+                            ]
+                        ]
+                    ]
+                ]
+            )
+        ]
+    ]
+
+[<ReactComponent>]
+let App () =
+    Html.div [
+        Fade ()
+        CSSTransitionDemo ()
     ]

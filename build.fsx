@@ -1,4 +1,4 @@
-#r "nuget: Fun.Build, 0.2.9"
+#r "nuget: Fun.Build, 0.3.0"
 #r "nuget: Fake.IO.FileSystem, 5.23.1"
 #r "nuget: Fake.Core.Environment, 5.23.1"
 #r "nuget: Fake.Tools.Git, 5.23.1"
@@ -35,7 +35,7 @@ module Stages =
             )
 
             run (fun _ ->
-                !! (Glob.fableJs "Demo")
+                !!(Glob.fableJs "Demo")
                 ++ (Glob.fableJsMap "Demo")
                 ++ (Glob.fableJs "Package")
                 ++ (Glob.fableJsMap "Package")
@@ -43,15 +43,13 @@ module Stages =
             )
         }
 
-    let pnpmInstall =
-        stage "Pnpm install" {
-            run "pnpm install"
-        }
+    let pnpmInstall = stage "Pnpm install" { run "pnpm install" }
 
 pipeline "Dev" {
 
     Stages.clean
     Stages.pnpmInstall
+    noPrefixForStep
 
     stage "Watch" {
         paralle
@@ -61,7 +59,7 @@ pipeline "Dev" {
         run "dotnet fable --watch"
     }
 
-    runIfOnlySpecified true
+    runIfOnlySpecified
 }
 
-tryPrintPipelineCommandHelp()
+tryPrintPipelineCommandHelp ()

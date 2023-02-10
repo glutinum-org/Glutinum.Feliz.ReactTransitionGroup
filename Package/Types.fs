@@ -4,7 +4,8 @@ open Feliz
 open Fable.Core
 
 type IReactResizeDetectorProperty =
-    interface end
+    interface
+    end
 
 [<RequireQualifiedAccess>]
 [<StringEnum>]
