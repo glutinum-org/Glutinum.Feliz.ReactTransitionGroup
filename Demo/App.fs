@@ -75,7 +75,7 @@ let CSSTransitionDemo () =
             transition.timeout 300
             transition.unmountOnExit
             cssTransition.classNames "alert"
-            transition.onEnter (fun () ->
+            transition.onEnter (fun _ ->
                 setShowButton false
             )
             transition.onExited (fun () ->
